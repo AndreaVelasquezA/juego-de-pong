@@ -50,6 +50,7 @@ ball.goto(0,0)
 ball.dx = 0.3
 ball.dy = 0.3
 
+
 #score board
 score = turtle.Turtle()
 score.speed(0)
@@ -156,7 +157,30 @@ while True:
     if(ball.xcor()<-340 and ball.xcor()>-350) and (ball.ycor()< paddle_a.ycor()+40 and ball.ycor()> paddle_a.ycor()-40):
         ball.setx(-340)
         ball.dx *= -1
-        winsound.PlaySound("no-1.wav",winsound.SND_ASYNC)
+        winsound.PlaySound("no-1.wav",winsound.SND_ASYNC)  
+
+    if(score_a==score_b):
+        ball.color("yellow")
+    elif(score_a>score_b):
+        ball.color("purple")
+    else:
+        ball.color("blue")
+    
+    if(score_a==3 or score_b==3):
+        ball.shape*2("circle")
+
+    
+
+
+
+    if(score_a==10 or score_b==10):
+        break 
+
+    
+
+
+
+
 
 
 
